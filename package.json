@@ -1,0 +1,29 @@
+{
+  "name": "testins",
+  "version": "1.0.0",
+  "description": "test task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "sass": "sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TayaValko/Test_Task_INCRIFY.git"
+  },
+  "author": "Taya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TayaValko/Test_Task_INCRIFY/issues"
+  },
+  "homepage": "https://github.com/TayaValko/Test_Task_INCRIFY#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^6.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

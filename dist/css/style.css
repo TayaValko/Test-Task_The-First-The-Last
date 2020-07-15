@@ -1,0 +1,694 @@
+/* break points*/
+/****************************
+ HIGH PPI DISPLAY BACKGROUNDS
+*****************************/
+@font-face {
+  font-family: 'TT Travels';
+  src: url("../font/TT_Travel/TTTravels-Thin.ttf");
+  src: local("TTTravels-Thin"), local("TTTravels-Thin"), url("../font/TT_Travel/TTTravels-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url("../font/TT_Travel/TTTravels-Light.ttf");
+  src: local("TTTravels-Light"), local("TTTravels-Light"), url("../font/TT_Travel/TTTravels-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url("../font/TT_Travel/TTTravels-Regular.ttf");
+  src: local("TTTravels-Regular"), local("TTTravels-Regular"), url("../font/TT_Travel/TTTravels-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url("../font/TT_Travel/TTTravels-Medium.ttf");
+  src: local("TTTravels-Medium"), local("TTTravels-Medium"), url("../font/TT_Travel/TTTravels-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Travels';
+  src: url("../font/TT_Travel/TTTravels-Bold.ttf");
+  src: local("TTTravels-Bold"), local("TTTravels-Bold"), url("../font/TT_Travel/TTTravels-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'GT America';
+  src: url("../font/GT America Bold/GT America Bold.ttf");
+  src: local("GT America Bold"), local("GT America Bold"), url("../font/GT America Bold/GT America Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Schnyder Cond XL Demi';
+  src: url("../font/Schnyder_X_Condensed/Schnyder_X_Cond_XL_Demi.otf");
+  src: local("Schnyder_X_Cond_XL_Demi"), local("Schnyder_X_Cond_XL_Demi"), url("../font/Schnyder_X_Condensed/Schnyder_X_Cond_XL_Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  cursor: none;
+  outline: 0; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  letter-spacing: 0.01em;
+  height: 100vh;
+  font-style: normal;
+  background: #ffffff;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  @media only screen and (max-width: 767px) {
+    body {
+      height: auto; } }
+
+button {
+  outline: 0; }
+
+.container {
+  margin: 0px auto; }
+
+.wrapper {
+  position: relative;
+  right: 0; }
+
+.cursor-point {
+  position: fixed;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translateZ(0);
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  background-color: rgba(255, 0, 0, 0);
+  opacity: 0.4;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px; }
+
+.cursor-point {
+  transition: all 150ms ease-out; }
+
+.cursor-slider {
+  font-family: 'TT Travels', sans-serif;
+  font-size: 8px;
+  line-height: 10px;
+  display: none;
+  align-items: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000000;
+  position: fixed;
+  transform: translate(-50%, -50%) translateZ(0);
+  pointer-events: none;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  box-sizing: border-box;
+  transition: all 150ms ease-out;
+  margin-top: -9px;
+  padding-left: 60px;
+  -webkit-animation: KEYFRAME-NAME 2s ease-in-out;
+  -moz-animation: KEYFRAME-NAME 2s ease-in-out;
+  -o-animation: KEYFRAME-NAME 2s ease-in-out;
+  animation: KEYFRAME-NAME 2s ease-in-out; }
+  .cursor-slider.shown {
+    display: flex; }
+
+@-webkit-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.cursor-click:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 1px solid silver;
+  animation: cursorAnimation 400ms; }
+
+@keyframes cursorAnimation {
+  to {
+    transform: scale(2);
+    opacity: 0; } }
+
+.header {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  z-index: 4; }
+  .header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    background-color: transparent; }
+    .header .menu__logo {
+      position: absolute;
+      left: 47px;
+      top: 40px;
+      font-family: 'GT America', sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: -1px;
+      color: #000000;
+      text-decoration: none; }
+      .header .menu__logo img {
+        width: 100%;
+        display: none;
+        animation-delay: 2s;
+        transition: all 2.5s ease-in; }
+      @media only screen and (min-width: 414px) and (max-width: 767px) {
+        .header .menu__logo {
+          left: 24px;
+          top: 33px; } }
+      @media only screen and (max-width: 413px) {
+        .header .menu__logo {
+          left: 20px;
+          top: 16px; } }
+    .header .menu__navbar {
+      background-color: #ffffff;
+      width: 100%;
+      z-index: 3;
+      position: relative;
+      display: none; }
+      .header .menu__navbar .nav-list {
+        position: absolute;
+        top: 43px;
+        right: 48px;
+        list-style: none;
+        display: block; }
+        @media only screen and (max-width: 767px) {
+          .header .menu__navbar .nav-list {
+            display: none; } }
+        .header .menu__navbar .nav-list li {
+          display: block;
+          padding-bottom: 4px;
+          text-align: right;
+          margin: 0px auto; }
+          .header .menu__navbar .nav-list li:last-child {
+            padding-bottom: 0px; }
+          .header .menu__navbar .nav-list li a {
+            text-decoration: none;
+            font-family: 'TT Travels', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 13px;
+            text-align: right;
+            letter-spacing: 0.02em;
+            text-transform: capitalize;
+            color: #000000; }
+        @media only screen and (max-width: 767px) {
+          .header .menu__navbar .nav-list {
+            display: none; } }
+      .header .menu__navbar .menu-mob {
+        display: none; }
+        @media only screen and (max-width: 767px) {
+          .header .menu__navbar .menu-mob {
+            display: block; } }
+        .header .menu__navbar .menu-mob__bg {
+          width: 100%; }
+          .header .menu__navbar .menu-mob__bg.animate {
+            opacity: 0.9;
+            -webkit-transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+            -moz-transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+            -ms-transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+            -o-transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+            transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1); }
+        .header .menu__navbar .menu-mob__block {
+          width: 100%;
+          display: none;
+          height: 100vh;
+          position: absolute;
+          width: 100%;
+          background: #40435b;
+          opacity: 0.9;
+          -webkit-animation: MENU-MOB 1.5s ease-in-out;
+          -moz-animation: MENU-MOB 1.5s ease-in-out;
+          -o-animation: MENU-MOB 1.5s ease-in-out;
+          animation: MENU-MOB 1.5s ease-in-out; }
+
+@-webkit-keyframes MENU-MOB {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
+
+@-moz-keyframes MENU-MOB {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
+
+@-o-keyframes MENU-MOB {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
+
+@keyframes MENU-MOB {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.9; } }
+          .header .menu__navbar .menu-mob__block ul {
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%; }
+            .header .menu__navbar .menu-mob__block ul li {
+              list-style: none;
+              width: 100%;
+              margin-top: 40px;
+              text-align: center;
+              font-size: 19px; }
+              .header .menu__navbar .menu-mob__block ul li a {
+                font-family: 'TT Travels', sans-serif;
+                font-weight: normal;
+                color: #ffffff;
+                text-transform: uppercase;
+                text-decoration: none;
+                letter-spacing: 3px;
+                font-size: 26px; }
+        .header .menu__navbar .menu-mob__burger {
+          height: 9px;
+          width: 20px;
+          position: absolute; }
+          @media only screen and (min-width: 414px) and (max-width: 767px) {
+            .header .menu__navbar .menu-mob__burger {
+              top: 38px;
+              right: 24px; } }
+          @media only screen and (max-width: 413px) {
+            .header .menu__navbar .menu-mob__burger {
+              top: 20px;
+              right: 20px; } }
+          .header .menu__navbar .menu-mob__burger .x, .header .menu__navbar .menu-mob__burger .y {
+            position: relative;
+            margin: auto;
+            top: 0px;
+            bottom: 0px;
+            height: 1px;
+            width: 20px;
+            background: rgba(40, 40, 40, 0.57);
+            -webkit-transition: all 200ms ease-out;
+            -moz-transition: all 200ms ease-out;
+            -ms-transition: all 200ms ease-out;
+            -o-transition: all 200ms ease-out;
+            transition: all 200ms ease-out; }
+            .header .menu__navbar .menu-mob__burger .x.collapse, .header .menu__navbar .menu-mob__burger .y.collapse {
+              height: 2px;
+              background: #ffffff;
+              -webkit-transition: all 470ms ease-out;
+              -moz-transition: all 470ms ease-out;
+              -ms-transition: all 470ms ease-out;
+              -o-transition: all 470ms ease-out;
+              transition: all 470ms ease-out; }
+          .header .menu__navbar .menu-mob__burger .x.rotate45 {
+            top: 2px;
+            transition-delay: .125s;
+            -ms-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+          .header .menu__navbar .menu-mob__burger .y {
+            top: 7px; }
+            .header .menu__navbar .menu-mob__burger .y.rotate135 {
+              transition-delay: .225s;
+              top: 0px;
+              -ms-transform: rotate(135deg);
+              -webkit-transform: rotate(135deg);
+              transform: rotate(135deg); }
+
+main .page {
+  height: 100vh; }
+  main .page .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0px auto;
+    display: block; }
+    @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+      main .page .bg-img {
+        width: 506px;
+        height: 605px; } }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      main .page .bg-img {
+        width: 100%;
+        top: 85px; } }
+    @media only screen and (max-width: 767px) {
+      main .page .bg-img {
+        width: 100%; } }
+    @media only screen and (max-width: 413px) {
+      main .page .bg-img {
+        width: 95%;
+        top: -15px; } }
+    @media only screen and (min-width: 414px) and (max-width: 767px) {
+      main .page .bg-img {
+        width: 94%; } }
+  main .page .path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: dash 5s linear forwards; }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+  main .page .swiper-container {
+    width: 100%;
+    height: 100%;
+    animation-delay: 5s; }
+    main .page .swiper-container .items {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      transition: all .5s ease; }
+      main .page .swiper-container .items__inner {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      main .page .swiper-container .items__layer {
+        position: absolute !important;
+        animation-delay: 5s; }
+        main .page .swiper-container .items__layer img {
+          display: none; }
+          main .page .swiper-container .items__layer img.animation {
+            -webkit-animation: KEYFRAME-NAME 2s ease-in-out;
+            -moz-animation: KEYFRAME-NAME 2s ease-in-out;
+            -o-animation: KEYFRAME-NAME 2s ease-in-out;
+            animation: KEYFRAME-NAME 2s ease-in-out; }
+            main .page .swiper-container .items__layer img.animation.shown {
+              display: flex; }
+
+@-webkit-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes KEYFRAME-NAME {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+      main .page .swiper-container .items__layer:nth-child(1) {
+        top: 74px !important;
+        left: initial !important;
+        display: block;
+        margin: 0px auto; }
+        main .page .swiper-container .items__layer:nth-child(1) img {
+          width: 476px;
+          height: 702px;
+          object-fit: cover;
+          transform: rotate(1.5deg) !important; }
+          @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+            main .page .swiper-container .items__layer:nth-child(1) img {
+              width: 359px;
+              height: 530px; } }
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            main .page .swiper-container .items__layer:nth-child(1) img {
+              width: 359px;
+              height: 530px; } }
+          @media only screen and (min-width: 414px) and (max-width: 767px) {
+            main .page .swiper-container .items__layer:nth-child(1) img {
+              width: 273px;
+              height: 403px; } }
+          @media only screen and (max-width: 413px) {
+            main .page .swiper-container .items__layer:nth-child(1) img {
+              width: 250px;
+              height: 369px; } }
+        @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+          main .page .swiper-container .items__layer:nth-child(1) {
+            top: 15% !important; } }
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          main .page .swiper-container .items__layer:nth-child(1) {
+            top: 24% !important; } }
+        @media only screen and (max-width: 767px) {
+          main .page .swiper-container .items__layer:nth-child(1) {
+            top: 50% !important;
+            transform: translateY(-50%) !important; } }
+      main .page .swiper-container .items__layer:nth-child(2) {
+        top: 201px !important;
+        left: 222px !important; }
+        main .page .swiper-container .items__layer:nth-child(2) img {
+          width: 238px;
+          height: 331px;
+          object-fit: cover;
+          transform: rotate(1.1deg) !important;
+          transition: all 1.5s ease-in; }
+          @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+            main .page .swiper-container .items__layer:nth-child(2) img {
+              width: 163px;
+              height: 226px; } }
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            main .page .swiper-container .items__layer:nth-child(2) img {
+              width: 163px;
+              height: 226px; } }
+        main .page .swiper-container .items__layer:nth-child(2):after {
+          bottom: -23px;
+          right: 0; }
+        @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+          main .page .swiper-container .items__layer:nth-child(2) {
+            left: 162.13px !important;
+            top: 30% !important; } }
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          main .page .swiper-container .items__layer:nth-child(2) {
+            left: 24px !important;
+            top: 318px !important; } }
+        @media only screen and (max-width: 767px) {
+          main .page .swiper-container .items__layer:nth-child(2) {
+            display: none !important; } }
+      main .page .swiper-container .items__layer:nth-child(3) {
+        right: 205px;
+        top: 495px !important;
+        left: initial !important; }
+        main .page .swiper-container .items__layer:nth-child(3) img {
+          width: 345px;
+          height: 238px;
+          object-fit: cover;
+          transform: rotate(2.03deg) !important;
+          transition: all 1.5s ease-in; }
+          @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+            main .page .swiper-container .items__layer:nth-child(3) img {
+              width: 234px;
+              height: 162px; } }
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            main .page .swiper-container .items__layer:nth-child(3) img {
+              width: 234px;
+              height: 162px; } }
+        main .page .swiper-container .items__layer:nth-child(3):after {
+          bottom: -23px;
+          left: 0; }
+        @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+          main .page .swiper-container .items__layer:nth-child(3) {
+            right: 145px !important;
+            top: 50% !important; } }
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+          main .page .swiper-container .items__layer:nth-child(3) {
+            right: 24px !important;
+            top: 70% !important; } }
+        @media only screen and (max-width: 767px) {
+          main .page .swiper-container .items__layer:nth-child(3) {
+            display: none !important; } }
+    main .page .swiper-container .swiper-wrapper .slick-track {
+      transition: none; }
+    main .page .swiper-container .swiper-wrapper .swiper-slide {
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center; }
+      main .page .swiper-container .swiper-wrapper .swiper-slide .bg-slider-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        width: 50%;
+        margin: 0px auto;
+        transform: translate(-50%, -50%);
+        background: #000000;
+        opacity: 0.5;
+        filter: blur(111px);
+        border-radius: 170.5px;
+        height: 50%; }
+      main .page .swiper-container .swiper-wrapper .swiper-slide.swiper-slide-prev .item-text__title {
+        transform: rotate(-1.5deg);
+        line-height: 0%; }
+      main .page .swiper-container .swiper-wrapper .swiper-slide.swiper-slide-next .item-text__title {
+        transform: rotate(1.5deg);
+        line-height: 0%; }
+      main .page .swiper-container .swiper-wrapper .swiper-slide:not(.swiper-slide-active) .item-text__title {
+        -webkit-text-stroke-color: #af2722;
+        color: transparent;
+        -webkit-text-stroke-width: 1px; }
+      main .page .swiper-container .swiper-wrapper .swiper-slide .item-text {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 0px auto;
+        justify-content: center;
+        color: #ffffff;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 5;
+        height: 50%;
+        animation-delay: 2s;
+        transition: all 2.5s ease-in; }
+        @media only screen and (max-width: 767px) {
+          main .page .swiper-container .swiper-wrapper .swiper-slide .item-text {
+            max-width: 100%;
+            margin: 0px auto; } }
+        main .page .swiper-container .swiper-wrapper .swiper-slide .item-text__title {
+          font-family: 'Schnyder Cond XL Demi', sans-serif;
+          font-size: 125.581px;
+          line-height: 86%;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          text-transform: uppercase;
+          color: #580300;
+          mix-blend-mode: darken;
+          animation-delay: 1s;
+          transition: all 1.5s ease-in; }
+          @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+            main .page .swiper-container .swiper-wrapper .swiper-slide .item-text__title {
+              font-size: 96px; } }
+          @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            main .page .swiper-container .swiper-wrapper .swiper-slide .item-text__title {
+              font-size: 96px; } }
+          @media only screen and (min-width: 414px) and (max-width: 767px) {
+            main .page .swiper-container .swiper-wrapper .swiper-slide .item-text__title {
+              font-size: 48px; } }
+          @media only screen and (max-width: 413px) {
+            main .page .swiper-container .swiper-wrapper .swiper-slide .item-text__title {
+              font-size: 44px; } }
+  main .page .social {
+    position: absolute;
+    bottom: 47px;
+    left: 48px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: none;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    @media only screen and (min-width: 414px) and (max-width: 767px) {
+      main .page .social {
+        position: absolute;
+        bottom: 24px;
+        left: 24px; } }
+    @media only screen and (max-width: 413px) {
+      main .page .social {
+        position: absolute;
+        bottom: 20px;
+        left: 20px; } }
+    main .page .social__item {
+      color: #000000;
+      list-style: none;
+      padding-right: 8px; }
+      main .page .social__item:last-child {
+        padding-right: 0px; }
+      main .page .social__item hr {
+        width: 56px;
+        height: 1px;
+        background: #393939;
+        opacity: 0.24; }
+      main .page .social__item a {
+        font-family: 'TT Travels', sans-serif;
+        font-size: 11px;
+        line-height: 13px;
+        display: flex;
+        align-items: flex-end;
+        letter-spacing: 0.02em;
+        font-weight: normal;
+        color: #000000;
+        text-decoration: none; }
